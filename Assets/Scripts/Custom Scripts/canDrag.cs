@@ -8,8 +8,6 @@ public class canDrag : MonoBehaviour
     Vector3 mousePositionOffset;
     public GameObject block;
 
-    //[SerializeField] Camera camera;
-
     private Vector3 GetMouseWorldPosition()
     {
         return Camera.main.ScreenToWorldPoint(Input.mousePosition);
