@@ -7,6 +7,7 @@ public class canDrag : MonoBehaviour
     //Initialising Variables
     Vector3 mousePositionOffset;
     public GameObject block;
+    private bool draggable = true;
 
     private Vector3 GetMouseWorldPosition()
     {
@@ -21,6 +22,18 @@ public class canDrag : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        block.transform.position = GetMouseWorldPosition() + mousePositionOffset;
+        if (draggable)
+        {
+            block.transform.position = GetMouseWorldPosition() + mousePositionOffset;
+        }
+        else
+        {
+            //Do nothing
+        }
+    }
+
+    public void stopDrag()
+    {
+        draggable = false;
     }
 }
