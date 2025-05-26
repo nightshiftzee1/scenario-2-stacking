@@ -28,7 +28,7 @@ public class canDrag : MonoBehaviour
         }
         else
         {
-            //Do nothing
+            block.transform.position = block.transform.position;
         }
     }
 

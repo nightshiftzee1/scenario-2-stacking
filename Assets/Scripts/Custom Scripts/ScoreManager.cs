@@ -11,6 +11,9 @@ public class ScoreManager : MonoBehaviour
 
     int score = 5;
 
+    public GameObject MainScene;
+    public GameObject GameOverScreen;
+
     private void Awake()
     {
         instance = this;
@@ -25,7 +28,9 @@ public class ScoreManager : MonoBehaviour
     {
         if (score == 0 || score < 0)
         {
-            //Game over
+            MainScene.SetActive(false);
+            GameOverScreen.SetActive(true);
+            score = 5;
         }
     }
     public void RemovePoint()
